@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProgramaEgresadoSena.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,60 +31,90 @@ namespace ProgramaEgresadoSena.Controllers
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
-            try
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            SE_Usuarios usu= new SE_Usuarios
             {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                documento = int.Parse(collection["documento"]),
+                tipodoc = collection["tipodoc"],
+                nombre = collection["nombre"],
+                celular = int.Parse(collection["celular"]),
+                email = collection["email"],
+                genero = collection["genero"],
+                aprendiz = collection["aprendiz"],
+                egresado = collection["egresado"],
+                areaformacion = collection["areaformacion"],
+                fecha_egresado = DateTime.Parse(collection["fecha_egresado"].ToString()),
+                direccion = collection["direccion"],
+                barrio = collection["barrio"],
+                ciudad = collection["ciudad"],
+                departamento = collection["departamento"],
+                fecha_registro = DateTime.Parse(collection["fecha_registro"].ToString())
+            };
+            ma.Alta(usu);
+            return RedirectToAction("Index");
         }
+
 
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            SE_Usuarios usu = ma.Recuperardocumento(id);
+            return View(usu);
         }
 
         // POST: Home/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            SE_Usuarios art = new SE_Usuarios
             {
-                // TODO: Add update logic here
+                documento = id,
+                tipodoc = collection["tipodoc"],
+                nombre = collection["nombre"],
+                celular = int.Parse(collection["celular"]),
+                email = collection["email"],
+                genero = collection["genero"],
+                aprendiz = collection["aprendiz"],
+                egresado = collection["egresado"],
+                areaformacion = collection["areaformacion"],
+                fecha_egresado = DateTime.Parse(collection["fecha_egresado"].ToString()),
+                direccion = collection["direccion"],
+                barrio = collection["barrio"],
+                ciudad = collection["ciudad"],
+                departamento = collection["departamento"],
+                fecha_registro = DateTime.Parse(collection["fecha_registro"].ToString())
+              
+            };
+            ma.Modificar(art);
+            return RedirectToAction("Index");
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         // GET: Home/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            SE_Usuarios usu = ma.Recuperardocumento(id);
+            return View(usu);
         }
 
         // POST: Home/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            ma.Borrar(id);
+            return RedirectToAction("Index");
+            
+        }
+        public ActionResult Visualizar()
+        {
+            MantenimientoUsuario ma = new
+            MantenimientoUsuario();
+            return View(ma.RecuperarTodos());
         }
     }
 }

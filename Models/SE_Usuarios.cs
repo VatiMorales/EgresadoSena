@@ -7,22 +7,22 @@ namespace ProgramaEgresadoSena.Models
 {
     public class SE_Usuarios
     {
-        public int Usu_id { get; set; }
-        public int Usu_documento { get; set; }
-        public string Usu_tipodoc { get; set; }
-        public string Usu_nombre { get; set; }
-        public int Usu_celular { get; set; }
-        public string Usu_email { get; set; }
-        public string Usu_genero{ get; set; }
-        public bool Usu_aprendiz { get; set; }
-        public bool Usu_egresado { get; set; }
-        public string Usu_areaformacion { get; set; }
-        public DateTime Usu_fechaegresado { get; set; }
-        public string Usu_direccion { get; set; }
-        public string Usu_barrio { get; set; }
-        public string Usu_ciudad { get; set; }
-        public string Usu_departamento { get; set; }
-        public DateTime Usu_fecharegistro { get; set; }
+        public int id { get; set; }
+        public int documento { get; set; }
+        public string tipodoc { get; set; }
+        public string nombre { get; set; }
+        public int celular { get; set; }
+        public string email { get; set; }
+        public string genero{ get; set; }
+        public string aprendiz { get; set; }
+        public string egresado { get; set; }
+        public string areaformacion { get; set; }
+        public DateTime fecha_egresado { get; set; }
+        public string direccion { get; set; }
+        public string barrio { get; set; }
+        public string ciudad { get; set; }
+        public string departamento { get; set; }
+        public DateTime fecha_registro { get; set; }
 
     }
 }

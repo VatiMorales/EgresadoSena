@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        <div>
+            @Html.ActionLink("Visualizar todos los usuarios", "Visualizar") -
+            @Html.ActionLink("Crear Usuario ", "Create") -
+
+            @Html.ActionLink("Buscar por Documento", "BuscarDoc") -
+            @Html.ActionLink("Buscar por Centro Formación", "BuscarCentro")
+            @Html.ActionLink("Buscar por Genero", "BuscarGenero")
+
+            <hr />
+            @RenderBody()
+            <hr />
+            <h3>Vanesa Morales © 2021 - Todos los derechos reservados.</h3>
+
+        </div>
+    </div>
+</body>
+</html>
