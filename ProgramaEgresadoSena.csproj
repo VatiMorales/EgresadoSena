@@ -111,6 +111,10 @@
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\BuscarDoc.cshtml" />
+    <Content Include="Views\Home\BuscarCentro.cshtml" />
+    <Content Include="Views\Home\BuscarGenero.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

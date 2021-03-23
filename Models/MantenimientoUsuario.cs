@@ -105,7 +105,7 @@ namespace ProgramaEgresadoSena.Models
         public SE_Usuarios Recuperardocumento(int documento)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("select usu_id,usu_documento,usu_tipodoc,usu_nombre,usu_celular,usu_email,usu_genero,usu_aprendiz,usu_egresado,usu_areaformacion,usu_fechaegresado,usu_direccion,usu_barrio,usu_ciudad,usu_departamento,usu_fecharegistro from SE_Usuarios where usu_documento=@usu_documento", con);//consulta en la base de datos.
+            SqlCommand comando = new SqlCommand("select usu_id,usu_documento,usu_tipodoc,usu_nombre,usu_celular,usu_email,usu_genero,usu_aprendiz,usu_egresado,usu_areaformacion,usu_fechaegresado,usu_direccion,usu_barrio,usu_ciudad,usu_departamento,usu_fecharegistro from SE_Usuarios where usu_documento=@documento", con);//consulta en la base de datos.
             comando.Parameters.Add("@usu_documento", SqlDbType.Int);
             comando.Parameters["@usu_documento"].Value = documento;
             con.Open();

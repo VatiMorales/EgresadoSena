@@ -18,7 +18,9 @@ namespace ProgramaEgresadoSena.Controllers
         // GET: Home/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            SE_Usuarios usu = ma.Recuperardocumento(id);
+            return View(usu);
         }
 
         // GET: Home/Create
@@ -116,5 +118,28 @@ namespace ProgramaEgresadoSena.Controllers
             MantenimientoUsuario();
             return View(ma.RecuperarTodos());
         }
+        /*public ActionResult BuscarDoc(int id)
+        {
+            MantenimientoUsuario ma = new MantenimientoUsuario();
+            SE_Usuarios usu = ma.Recuperardocumento(id);
+
+            if (usu != null)
+                return View("Details", usu);
+            else
+                return View("UsuarioNoExistente");
+        }*/
+        public ActionResult BuscarDoc()
+        {
+            return View();
+        }
+        public ActionResult BuscarCentro()
+        {
+            return View();
+        }
+        public ActionResult BuscarGenero()
+        {
+            return View();
+        }
+
     }
 }
